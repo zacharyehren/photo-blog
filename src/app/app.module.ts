@@ -5,15 +5,20 @@ import { NgModule } from '@angular/core';
 
 // package for browser specific features
 import { BrowserModule } from '@angular/platform-browser';
-
-import{ AppComponent } from './app.component'
+import { AppComponent } from './app.component'
+// any time a new component is created, it needs to be imported to app.module (similar to adding a src tag to the index.html file)
+import { EntryListComponent, EntryComponent } from './entries'
 
 // angular now knows that the app will be used in a web browser
 @NgModule({
     imports: [BrowserModule],
     // tells the browser to start AppComponent at launch
-    // declarations is for registering all our applications components
-    declarations: [AppComponent],
+    // declarations is for registering all our applications components (similar to dependencies in AngularJS)
+    declarations: [
+        AppComponent,
+        EntryComponent, 
+        EntryListComponent
+    ],
     // collection of top level components that act as an entry point or root of our application (generally one per application)
     bootstrap: [AppComponent]
 })
