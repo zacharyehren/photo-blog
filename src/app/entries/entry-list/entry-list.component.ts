@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
 })
 
 export class EntryListComponent {
-
+    // angular uses the constructor function to instantiate components and wire up dependencies 
+    constructor() {
+        
+    }
 }
