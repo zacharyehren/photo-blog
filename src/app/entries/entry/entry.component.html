@@ -1,3 +1,16 @@
 <h2>{{title}}</h2>
-{{photo}} 
-{{description}} 
+<figure>
+    <img src='{{photo}}'> 
+    <figcaption>{{description}} </figcaption>
+</figure>
+<div class="actions">
+    <button type="button" (click)="isLiked = !isLiked" [ngClass]="{liked: isLiked}">❤</button>
+    <button type="button" (click)="showComments = !showComments">Comments({{ comments.length }})</button>
+
+</div>
+<div class="comments" *ngIf="showComments">
+    <!-- using an * before the ngFor, you are declaring the current element as the base for the loop's template -->
+    <div class="comment" *ngFor="let comment of comments">
+        <p><strong>{{ comment.name }}</strong> {{ comment.comment }}</p>
+    </div>
+</div>
