@@ -1,1 +1,2 @@
-<app-entry></app-entry>
+<!-- [entry]="entry" passes the entry data to the entry.component which is how we access that data on entry.component.html -->
+<app-entry *ngFor="let entry of entries" [entry]="entry"></app-entry>

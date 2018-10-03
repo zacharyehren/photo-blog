@@ -6,15 +6,19 @@ import { NgModule } from '@angular/core';
 // package for browser specific features
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 // any time a new component is created, it needs to be imported to app.module (similar to adding a src tag to the index.html file)
 import { AppComponent } from './app.component';
 import { EntryListComponent, EntryComponent, EntryService } from './entries'
+import { InMemoryEntryService } from './backend';
 
-// angular now knows that the app will be used in a web browser
 @NgModule({
+    // imports array is where all additional angular modules are referenced. its only for angular modules
     imports: [
+// angular now knows that the app will be used in a web browser
         BrowserModule,
-        HttpModule   
+        HttpModule,
+        InMemoryWebApiModule.forRoot(InMemoryEntryService)   
     ],
     // providers array lets the angular know what services are availabe when compiled (also allows the @injectable decorator to work)
     providers: [ EntryService ],
