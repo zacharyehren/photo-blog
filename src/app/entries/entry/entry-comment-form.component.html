@@ -1,12 +1,15 @@
 <!-- this form is being powered by angulars form module `'@angular/forms'` -->
-<form>
+
+<!-- this will cause the onSubmit function to fire on any submit action (clicking submit or hitting enter) -->
+<form (submit)="onSubmit()">
     <div>
         <label for="name">Name</label>
-        <input type="text" name="name" />
+        <!-- [] is for binding from a value in the parent component to an @Input() in the child component. It allows to pass objects. -->
+        <input type="text" name="name" [(ngModel)]="name"/>
     </div>
     <div>
         <label for="comment">Comment</label>
-        <textarea name="comment"></textarea>
+        <textarea name="comment" [(ngModel)]="comment"></textarea>
     </div>
     <div>
         <button>Submit</button>

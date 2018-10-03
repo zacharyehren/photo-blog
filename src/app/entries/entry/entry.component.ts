@@ -11,4 +11,8 @@ export class EntryComponent {
     // creates the entry property which enables us to use `{{entry.description}}` etc on the template
     // @Input allows the component to receive data from the Entry List
     @Input() entry: Entry;
+    
+    onCommentAdded(comment: {name: string; comment: string;}) {
+        this.entry.comments.push(comment);
+    }
 }
