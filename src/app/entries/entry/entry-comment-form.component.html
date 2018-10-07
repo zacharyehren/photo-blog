@@ -1,7 +1,8 @@
 <!-- this form is being powered by angulars form module `'@angular/forms'` -->
 
 <!-- this will cause the onSubmit function to fire on any submit action (clicking submit or hitting enter) -->
-<form (submit)="onSubmit()">
+<!-- #commentForm creates a local variable that we associate with the ngForm module this will allow us to interact with it in the component -->
+<form (submit)="onSubmit()" #commentForm="ngForm">
     <div>
         <label for="name">Name</label>
         <!-- [] is for binding from a value in the parent component to an @Input() in the child component. It allows to pass objects. -->
